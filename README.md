@@ -38,3 +38,14 @@ firebase deploy --only functions:trainView
 
 ```
 
+
+### Firebase Shell
+
+```bash
+cd septa-functions/station
+firebase functions:shell
+
+firebase > trainView.get('?trainid=454')
+```
+
+
