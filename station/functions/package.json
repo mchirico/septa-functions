@@ -8,7 +8,7 @@
     "start": "npm run shell",
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log",
-    "pretest": "tsc test/*.ts --module commonjs",
+    "pretest": "tsc test/*.ts src/*.ts --module commonjs",
     "test": "mocha --reporter spec"
   },
   "main": "lib/index.js",
