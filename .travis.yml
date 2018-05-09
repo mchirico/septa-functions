@@ -1,19 +1,18 @@
 language: node_js
 node_js:
-   - “8.10”
+ - “8.10”
  
 
 before_script:
-   - npm install
-   - npm install mocha
-   — npm install -g grunt-cli
-   - npm install -g firebase-tools
-   - npm i -g firebase-ci@latest
-   - npm install -g firebase-functions-test
-#   - npm install -g @angular/cli
+ - npm install
+ - npm install mocha
+ — npm install -g grunt-cli
+ - npm install -g firebase-tools
+ - npm i -g firebase-ci@latest
+ - npm install -g firebase-functions-test
 
 script:
-   - npm --prefix ~/septa-functions/station/functions run test
+ - npm --prefix ~/septa-functions/station/functions run test
 
 after_success:
 #   - firebase deploy --token $FIREBASE_TOKEN
