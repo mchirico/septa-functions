@@ -6,9 +6,8 @@ const test = require('firebase-functions-test')({
 }, './test/service-account.json');
 
 const functions = require('firebase-functions');
-
-
-
 const myFunctions = require('../src/index.js');
+
+
 
 
