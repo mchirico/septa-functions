@@ -1,6 +1,7 @@
 dist: trusty
 sudo: false
 language: node_js
+
 node_js:
 - '8.10'
 
@@ -14,6 +15,7 @@ addons:
 cache:
   directories:
   - "./node_modules"
+  
 install:
 - npm install
 - npm install mocha
