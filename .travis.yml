@@ -24,12 +24,11 @@ notifications:
     - "$EMAIL_NOTIFICATION$"
     on_success: never
     on_failure: always
-    
 before_install:
-- openssl aes-256-cbc -K $encrypted_c3f39a0ea23b_key -iv $encrypted_c3f39a0ea23b_iv
+- openssl aes-256-cbc -k "$super_secret_password"
   -in service-account.json.enc -out service-account.json -d
-- echo 'test'
 
+- echo 'test'
 before_script:
 - npm install -g codecov
 - npm install coveralls
