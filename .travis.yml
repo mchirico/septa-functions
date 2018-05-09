@@ -22,7 +22,7 @@ install:
 
 script:
 - export CHROME_BIN=chromium-browser
-- npm --prefix septa-functions/station/functions run test
+- npm --prefix mchirico/septa-functions/station/functions run test
 
 notifications:
   email:
