@@ -1,31 +1,39 @@
 dist: trusty
 sudo: false
 language: node_js
-
 node_js:
 - '8.10'
-
 addons:
   apt:
     sources:
     - google-chrome
     packages:
     - google-chrome-stable
-
 cache:
   directories:
   - "./node_modules"
-  
 install:
 - npm install
-- npm install mocha
-— npm install -g grunt-cli
-- npm install -g firebase-tools
-- npm i -g firebase-ci@latest
-- npm install -g firebase-functions-test
+
 
 script:
-- npm --prefix ~/septa-functions/station/functions run test
+- export CHROME_BIN=chromium-browser
+
+notifications:
+  email:
+    recipients:
+    - "$EMAIL_NOTIFICATION$"
+    on_success: never
+    on_failure: always
+    
+before_install:
+- echo 'test'
+
+before_script:
+- npm install -g codecov
+- npm install coveralls
+- ng lint
 
 after_success:
-#   - firebase deploy --token $FIREBASE_TOKEN
+  - codecov
+
