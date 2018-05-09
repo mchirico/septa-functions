@@ -4,3 +4,4 @@ const test = require('firebase-functions-test')({
   storageBucket: 'septa-3f6ab.appspot.com',
   projectId: 'septa-3f6ab',
 }, 'path/to/serviceAccountKey.json');
+

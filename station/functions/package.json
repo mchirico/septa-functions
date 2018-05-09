@@ -8,6 +8,7 @@
     "start": "npm run shell",
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log",
+    "pretest": "tsc test/*.ts --module commonjs",
     "test": "mocha --reporter spec"
   },
   "main": "lib/index.js",
@@ -19,7 +20,7 @@
     "firebase-functions-test": "^0.1.2",
     "mocha": "^5.1.1",
     "tslint": "^5.8.0",
-    "typescript": "^2.5.3"
+    "typescript": "^2.8.3"
   },
   "private": true
 }
