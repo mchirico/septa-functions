@@ -4,6 +4,10 @@ Firebase functions for septa project. <a href="https://jira.aipiggybot.io/projec
 [![Build Status](https://travis-ci.com/mchirico/septa-functions.svg?branch=develop)](https://travis-ci.com/mchirico/septa-functions)
 
 ### Initial Setup
+
+A valid credentials file **service-account.json** is needed in
+`~septa-functions/station/functions/test`.  That file is not in the repository.
+
 ```bash
 # Need global tools
 npm install -g firebase-tools
@@ -18,7 +22,6 @@ cd septa-functions/station
 firebase init
 
 
-
 ```
 
 
@@ -27,7 +30,7 @@ firebase init
 ```bash
 # You should update tools
 cd ~/septa-functions/station/functions
-npm install firebase-functions@latest firebase-admin@latest --save
+npm install 
 ```
 
 ### Add/Update Functions
@@ -48,14 +51,16 @@ cd ~/septa-functions/station
 firebase functions:shell
 
 firebase > trainView.get('?trainid=454')
+# Note train 454 must be running.
+
+firebase > anyTrain()
 ```
 
 ### Testing
 
 ```bash
 cd ~/septa-functions/station/functions
-npm install --save-dev firebase-functions-test
-npm install --save-dev mocha
+npm test
 ```
 
 
